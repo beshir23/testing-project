@@ -11,8 +11,13 @@ export interface Ordine {
     email: string;
     codiceFiscale: string;
     giftcards?: Giftcard[];
-
 }
+export interface Giftcard {
+    codice: string;
+    valore: number;
+    quantita: number;
+}
+
 
  export function newOrder(intestatario: Intestatario): Ordine {
     if (!intestatario || !intestatario.nome || !intestatario.cognome || !intestatario.email || !intestatario.codiceFiscale) {

@@ -1,8 +1,17 @@
-
-export interface Ordine {
-    giftcards?: Giftcard[];
+export interface Intestatario {
+    nome: string;
+    cognome: string;
+    email: string;
+    codiceFiscale: string;
 }
 
+export interface Ordine {
+    nome: string;
+    cognome: string;
+    email: string;
+    codiceFiscale: string;
+    giftcards?: Giftcard[];
+}
 export interface Giftcard {
     codice: string;
     valore: number;
@@ -40,5 +49,3 @@ export function getAmount(ordine: Ordine): Totali {
 }
 
 
-const totali: Totali = getAmount(ordine);
-console.log(totali);

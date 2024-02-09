@@ -75,6 +75,7 @@ describe('addGiftcard', () => {
     };
 
     const giftcardData: Giftcard = {
+      codice: '',
       valore: 50, 
       quantita: 1 
     };
