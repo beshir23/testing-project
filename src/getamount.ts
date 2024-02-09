@@ -1,24 +1,21 @@
-interface Ordine {
-    nome: string;
-    cognome: string;
-    email: string;
-    codiceFiscale: string;
+
+export interface Ordine {
     giftcards?: Giftcard[];
 }
 
-interface Giftcard {
+export interface Giftcard {
     codice: string;
     valore: number;
     quantita: number;
 }
 
-interface Totali {
+export interface Totali {
     imponibile: number;
     iva: number;
     totale: number;
 }
 
-function getAmount(ordine: Ordine): Totali {
+export function getAmount(ordine: Ordine): Totali {
 
     if (!ordine || !ordine.giftcards || ordine.giftcards.length === 0) {
         throw new Error('Nessuna giftcard nell\'ordine');
@@ -43,5 +40,5 @@ function getAmount(ordine: Ordine): Totali {
 }
 
 
-const totali: Totali = getAmount(ordineAggiornato);
+const totali: Totali = getAmount(ordine);
 console.log(totali);
