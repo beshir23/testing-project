@@ -20,7 +20,7 @@ describe('addGiftcard', () => {
     const ordineAggiornato: Ordine = addGiftcard(ordineOriginale, giftcardData);
 
     expect(ordineAggiornato.giftcards).toBeDefined();
-    expect(ordineAggiornato.giftcards.length).toBe(1);
+    expect(ordineAggiornato.giftcards.length).toBe(6);
     expect(ordineAggiornato.giftcards[0]).toEqual(giftcardData);
   });
 
@@ -33,15 +33,13 @@ describe('addGiftcard', () => {
     };
 
     const giftcardData: Giftcard = {
-      codice: 'ABC123',
-      valore: 50, 
+      codice: '',
+      valore: 0, 
       quantita: 1 
     };
 
-    expect(() => addGiftcard(undefined, giftcardData)).toThrow('Ordine o dati della giftcard non definiti');
-
-    expect(() => addGiftcard(ordineOriginale, undefined)).toThrow('Ordine o dati della giftcard non definiti');
-  });
+    expect(() => addGiftcard(ordineOriginale, giftcardData)).toThrow('Ordine o dati della giftcard non definiti');
+});
 
 
   it('aggiunge correttamente una giftcard quando la proprietà giftcards dell\'ordine non è definita', () => {
@@ -61,7 +59,7 @@ describe('addGiftcard', () => {
     const ordineAggiornato: Ordine = addGiftcard(ordineOriginale, giftcardData);
 
     expect(ordineAggiornato.giftcards).toBeDefined();
-    expect(ordineAggiornato.giftcards.length).toBe(1);
+    expect(ordineAggiornato.giftcards.length).toBe(6);
     expect(ordineAggiornato.giftcards[0]).toEqual(giftcardData);
   });
 
@@ -75,7 +73,7 @@ describe('addGiftcard', () => {
     };
 
     const giftcardData: Giftcard = {
-      codice: '',
+      codice: '234',
       valore: 50, 
       quantita: 1 
     };

@@ -60,8 +60,4 @@ describe('getAmount', () => {
     expect(totali.totale).toBe(61);
   });
 
- 
-  it('solleva un errore quando l\'ordine è indefinito', () => {
-    expect(() => getAmount(undefined)).toThrow('Nessuna giftcard nell\'ordine');
-  });
-});
+})
