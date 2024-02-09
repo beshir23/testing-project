@@ -1,11 +1,11 @@
-interface Intestatario {
+export interface Intestatario {
     nome: string;
     cognome: string;
     email: string;
     codiceFiscale: string;
 }
 
-interface Ordine {
+export interface Ordine {
     nome: string;
     cognome: string;
     email: string;
@@ -14,7 +14,7 @@ interface Ordine {
 
 }
 
-function newOrder(intestatario: Intestatario): Ordine {
+ export function newOrder(intestatario: Intestatario): Ordine {
     if (!intestatario || !intestatario.nome || !intestatario.cognome || !intestatario.email || !intestatario.codiceFiscale) {
         throw new Error('Dati anagrafici incompleti');
     }

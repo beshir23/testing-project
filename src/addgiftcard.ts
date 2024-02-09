@@ -1,4 +1,4 @@
-interface Ordine {
+export interface Ordine {
     nome: string;
     cognome: string;
     email: string;
@@ -6,13 +6,13 @@ interface Ordine {
     giftcards?: Giftcard[];
 }
 
-interface Giftcard {
+export interface Giftcard {
     codice: string;
     valore: number;
     quantita: number;
 }
 
-function addGiftcard(ordine: Ordine, giftcardData: Giftcard): Ordine {
+export function addGiftcard(ordine: Ordine, giftcardData: Giftcard): Ordine {
   
     if (!ordine || !giftcardData || !giftcardData.codice || !giftcardData.valore || !giftcardData.quantita) {
         throw new Error('Ordine o dati della giftcard non definiti');

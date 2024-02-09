@@ -1,4 +1,4 @@
-import { newOrder, Intestatario, Ordine } from './ordine'; 
+import { newOrder, Intestatario, Ordine } from './neworder'; 
 
 describe('newOrder', () => {
 
@@ -21,7 +21,7 @@ describe('newOrder', () => {
       nome: 'Mario',
       cognome: 'Rossi',
       email: 'mario.rossi@example.com',
-
+      codiceFiscale:'',
     };
 
     expect(() => newOrder(datiIntestatario)).toThrow('Dati anagrafici incompleti');
@@ -44,6 +44,9 @@ describe('newOrder', () => {
     const datiIntestatario: Intestatario = {
       nome: 'Mario',
       cognome: 'Rossi',
+      email: '',
+      codiceFiscale:'',
+
 
     };
 
