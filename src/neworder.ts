@@ -10,6 +10,8 @@ interface Ordine {
     cognome: string;
     email: string;
     codiceFiscale: string;
+    giftcards?: Giftcard[];
+
 }
 
 function newOrder(intestatario: Intestatario): Ordine {
