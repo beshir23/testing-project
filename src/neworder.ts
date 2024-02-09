@@ -1,25 +1,39 @@
-function newOrder(intestatario) {
+interface Intestatario {
+    nome: string;
+    cognome: string;
+    email: string;
+    codiceFiscale: string;
+}
+
+interface Ordine {
+    nome: string;
+    cognome: string;
+    email: string;
+    codiceFiscale: string;
+}
+
+function newOrder(intestatario: Intestatario): Ordine {
     if (!intestatario || !intestatario.nome || !intestatario.cognome || !intestatario.email || !intestatario.codiceFiscale) {
         throw new Error('Dati anagrafici incompleti');
     }
 
-   
-    const ordine = {
+    const ordine: Ordine = {
         nome: intestatario.nome,
         cognome: intestatario.cognome,
         email: intestatario.email,
         codiceFiscale: intestatario.codiceFiscale,
+
     };
 
     return ordine;
 }
 
-const datiIntestatario = {
+const datiIntestatario: Intestatario = {
     nome: 'Mario',
     cognome: 'Rossi',
     email: 'mario.rossi@example.com',
     codiceFiscale: 'RSSMRA90A01H501A'
 };
 
-const nuovoOrdine = newOrder(datiIntestatario);
+const nuovoOrdine: Ordine = newOrder(datiIntestatario);
 console.log(nuovoOrdine);
