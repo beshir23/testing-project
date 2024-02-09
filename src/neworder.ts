@@ -10,7 +10,7 @@ export interface Ordine {
     cognome: string;
     email: string;
     codiceFiscale: string;
-    giftcards?: Giftcard[];
+    giftcards?: Giftcard[]
 }
 export interface Giftcard {
     codice: string;
